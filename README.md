@@ -1,4 +1,4 @@
-# FinalsBadUSB
+# BadUSB
 # Project Overview
 This project, part of the IT-Security final project at Hanyang University, demonstrates a sophisticated attack vector leveraging physical access and USB manipulation. The core concept is the creation of a BadUSB device that, when plugged into a Windows system, exploits the system's unlocked state. Additionally, a phishing website is deployed to enhance the attack's effectiveness. This project is intended solely for academic purposes.
 

@@ -94,7 +94,7 @@ del %temp_details%
 
 :: ############ CREATING THE SUMMARY FILE ############
 
-:: Erstellen der Zusammenfassungsdatei
+:: Create summary.txt File
 (
     echo ==========================
     echo PERSONAL INFORMATION

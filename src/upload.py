@@ -1,23 +1,23 @@
 import ftplib
 
-# FTP-Verbindungsinformationen
+# FTP connection information
 ftp_server = ""
 ftp_username = ""
 ftp_password = ""
 ftp_path = "/data/summary.txt"
 
-# Lokaler Pfad zur Datei
+# Local path to the file
 file_path = "summary.txt"
 
-# Verbindung zum FTP-Server herstellen
+# Establish connection to the FTP server
 ftp_conn = ftplib.FTP(ftp_server)
 ftp_conn.login(user=ftp_username, passwd=ftp_password)
 
-# Datei hochladen
+# Upload the file
 with open(file_path, 'rb') as file:
     ftp_conn.storbinary(f'STOR {ftp_path}', file)
 
 print("Successfully uploaded summary.txt")
 
-# Verbindung schließen
+# Close the connection
 ftp_conn.quit()

